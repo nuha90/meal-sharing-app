@@ -2,13 +2,11 @@
 * {
   font-family: "Montserrat", sans-serif;
 }
-body {
+/* body {
   padding: 0;
   margin: 0;
 }
-img {
-  width: 100%;
-}
+
 .centered {
   position: absolute;
   top: 50%;
@@ -52,4 +50,86 @@ footer {
 }
 .fa-twitter {
   color: black;
+} */
+
+body,
+html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+img {
+  width: 100%;
+}
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("https://coverfiles.alphacoders.com/707/70728.jpg");
+  min-height: 40rem;
+  height: 100vh;
+}
+
+.menu {
+  display: none;
+}
+.meal-id-li {
+  top: 80%;
+  padding: 10rem 10px;
+  font-weight: bold;
+  border: gray;
+  max-width: 300px;
+}
+
+.wrapper {
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 0 20px;
+}
+.form {
+  max-width: 550px;
+  margin: 0 auto;
+  background: black;
+  padding: 30px;
+  border-radius: 5px;
+  display: flex;
+  box-shadow: 0 0 10px;
+}
+.input-feilds {
+  display: flex;
+  flex-direction: column;
+  margin-right: 4%;
+  width: 48%;
+}
+.input-feilds .input {
+  margin: 10px 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid #c5ecfd;
+  padding: 10px;
+  color: #c5ecfd;
+  width: 100%;
+}
+::-webkit-input-placeholder {
+  color: #c5ecfd;
+}
+.btn {
+  background: #39b7dd;
+  text-align: center;
+  padding: 15px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.allMeals {
+  list-style-type: none;
+  position: relative;
+  width: 50rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 20rem;
+  margin-top: 5rem;
 }

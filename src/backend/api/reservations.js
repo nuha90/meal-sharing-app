@@ -31,6 +31,7 @@ const addReservation = async ({ body }) => {
     contact_email: contact_email,
   });
 };
+
 router.post("/", async (request, response) => {
   addReservation({
     body: request.body,
