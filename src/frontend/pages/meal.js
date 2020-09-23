@@ -88,7 +88,6 @@ window.handleMealRequest = params => {
         console.log("Success:", result);
       })
       .catch(error => {
-        alert("reservation failed");
         console.error("Error:", error);
       });
   });

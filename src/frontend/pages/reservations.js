@@ -27,15 +27,12 @@ window.handleReservationsRequest = params => {
       const ul = document.querySelector(".reservations");
       reservations.forEach(reservation => {
         const li = document.createElement("li");
+        let x = Math.floor(Math.random() * 6 + 1);
         li.innerHTML = `
-     
-      <div class="w3-row-padding w3-padding-16">
-      <div class="w3-third w3-margin-bottom">
-          <h1>${reservation.id}</h1>
-          </div></div>
-      
-      
-      `;
+        <img src="../assets/random${x}.jpg"  style="width:300px">
+        <h3>${reservation.meal_id}</h3>
+        <h3>${reservation.contact_name}</h3>
+        `;
         ul.appendChild(li);
       });
     });
