@@ -129,34 +129,6 @@ window.handleHomeRequest = () => {
       
     </footer>`;
 
-  // let mealTitle = document.getElementById("searchBar");
-  // mealTitle.addEventListener("keyup", () => {
-  //   let mealTitleInput = document
-  //     .getElementById("searchBar")
-  //     .value.toLowerCase();
-  //   let url = "/api/meals?" + "title=" + mealTitleInput;
-  //   if (mealTitleInput != "") {
-  //     fetch(url)
-  //       .then(response => response.json())
-  //       .then(meals => {
-  //         h3 = document.querySelector("h3");
-  //         meals.forEach(meals => {
-  //           h3.innerHTML = `${meals.title}`;
-  //           //   li = document.createElement("li");
-  //           //   meals.forEach(meals => {
-  //           //     li.innerHTML = `
-  //           //     <ul>
-  //           //         <li>${meals.title}</li>
-  //           //         <li>${meals.price}</li>
-  //           //     </ul>
-  //           // `;
-  //           document.body.appendChild(h3);
-  //         });
-  //       });
-  //   } else {
-  //     console.log("lllll");
-  //   }
-  // });
   const myForm = document.getElementById("myForm");
   myForm.addEventListener("submit", e => {
     e.preventDefault();
@@ -181,6 +153,7 @@ window.handleHomeRequest = () => {
     fetch("/api/meals/", options)
       .then(response => response.json())
       .then(result => {
+        alert("you just added a new meal");
         console.log("Success:", result);
       })
       .catch(error => {

@@ -21,25 +21,51 @@ window.handleMealsRequest = () => {
   </div>
   <h1> Our Meals</h1>
 
+  <div class="search-bar">
+      
+        <input type="text" id="searchBar" autocomplete="off" placeholder="search for a meal" />
+      </div>
+
+
   <ul class="allMeals"></ul>
   `;
 
-  fetch("/api/meals")
-    .then(response => response.json())
-    .then(meals => {
-      const ul = document.querySelector(".allMeals");
-      meals.forEach(meal => {
-        const li = document.createElement("li");
-        let x = Math.floor(Math.random() * 6 + 1);
-        li.innerHTML = `
-        <img src="../assets/random${x}.jpg" alt="Norway" style="width:300px">
-        <h3>${meal.title}</h3>
-        <h3>${meal.price} dkk</h3>
-        <button class="w3-button w3-block w3-black w3-margin-bottom reserve-meal">
-        <a href="/meal/${meal.id}">Book meal</a></button>
-        `;
-        ul.appendChild(li);
-      });
+  const ul = document.querySelector(".allMeals");
+  let mealTitle = document.getElementById("searchBar");
+  let meal = [];
+
+  mealTitle.addEventListener("keyup", e => {
+    let mealTitleInput = e.target.value.toLowerCase();
+    const filteredMeals = meal.filter(meal => {
+      return meal.title.toLowerCase().includes(mealTitleInput);
     });
+    ul.innerHTML = " ";
+    displayAllMeals(filteredMeals);
+  });
+
+  const loadMeals = async () => {
+    try {
+      const res = await fetch("/api/meals");
+      meal = await res.json();
+      displayAllMeals(meal);
+    } catch {
+      console.log(error);
+    }
+  };
+  function displayAllMeals(meals) {
+    meals.map(meal => {
+      const li = document.createElement("li");
+      let x = Math.floor(Math.random() * 6 + 1);
+      li.innerHTML = `
+    <img src="../assets/random${x}.jpg"  style="width:300px">
+    <h3>${meal.title}</h3>
+    <h3>${meal.price} dkk</h3>
+    <button class="w3-button w3-block w3-black w3-margin-bottom reserve-meal">
+    <a href="/meal/${meal.id}">Book meal</a></button>
+    `;
+      ul.appendChild(li);
+    });
+  }
+  loadMeals();
   router.updatePageLinks();
 };

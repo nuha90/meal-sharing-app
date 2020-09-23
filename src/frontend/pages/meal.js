@@ -47,8 +47,8 @@ window.handleMealRequest = params => {
     .then(response => response.json())
     .then(meals => {
       meals.find(meal => {
-        ul = document.getElementById("meals");
-        li = document.createElement("li");
+        const ul = document.getElementById("meals");
+        const li = document.createElement("li");
         li.innerHTML = `<div class="meal-id-li">
         <h1 class="h4 card-title pt-4">${meal.title}</h1>
         <p class="card-text">Location: ${meal.location}</p>
