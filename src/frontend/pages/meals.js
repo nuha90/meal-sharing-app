@@ -1,4 +1,4 @@
-window.handleMealsRequest = params => {
+window.handleMealsRequest = () => {
   document.body.innerHTML = `
   <!-- Links (sit on top) -->
   <div class="w3-top">
@@ -23,6 +23,7 @@ window.handleMealsRequest = params => {
 
   <ul class="allMeals"></ul>
   `;
+
   fetch("/api/meals")
     .then(response => response.json())
     .then(meals => {
@@ -40,4 +41,5 @@ window.handleMealsRequest = params => {
         ul.appendChild(li);
       });
     });
+  router.updatePageLinks();
 };
