@@ -176,3 +176,21 @@ html {
 
   outline: 0;
 }
+
+@media (max-width: 991px) {
+  body {
+    margin-left: 5px;
+  }
+  .allMeals {
+    flex-direction: column;
+    margin-left: 5px;
+    width: 100%;
+  }
+  .mealImages {
+    margin-left: 5px;
+  }
+  .search-bar {
+    left: 60%;
+    max-width: 300px;
+  }
+}
