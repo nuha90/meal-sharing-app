@@ -134,7 +134,9 @@ html {
   flex-wrap: wrap;
   margin-left: 20rem;
   margin-top: 15rem;
+  text-align: center;
 }
+
 .reservations {
   list-style-type: none;
   position: relative;
