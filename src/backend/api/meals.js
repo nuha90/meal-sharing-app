@@ -172,11 +172,10 @@ const getAvailableReservations = async availableReservations => {
   if (availableReservations === "true") {
     try {
       return await knex("meals")
-        .select("meals.*", knex.raw("sum(number_of_guests)"))
-
-        .leftJoin("reservations", "meals.id", "=", "reservations.meal_id")
+        .select("meals.*", knex.raw("count(contact_name)"))
+        .leftJoin("reservations", "meals.id", "reservations.meal_id")
         .groupBy("meals.id")
-        .having("meals.max_reservations", ">", "sum(number_of_guests)");
+        .having("meals.max_reservations", ">", knex.raw("count(contact_name)"));
     } catch (error) {
       console.log(error);
     }

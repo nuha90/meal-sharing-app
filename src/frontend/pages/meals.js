@@ -15,20 +15,15 @@ window.handleMealsRequest = () => {
         <a href="/reservations" class="w3-button w3-block w3-black">RESERVATION</a>
       </div>
       <div class="w3-col s3">
-        <a href="/reviews" class="w3-button w3-block w3-black">REVIEWS</a>
+        <a href="/contact" class="w3-button w3-block w3-black">CONTACT</a>
       </div>
     </div>
-  </div>
-  <h1> Our Meals</h1>
-
+    </div>
+  
   <div class="search-bar">
-      
-        <input type="text" id="searchBar" autocomplete="off" placeholder="search for a meal" />
-      </div>
-
-
-  <ul class="allMeals"></ul>
-  `;
+  <input type="text" id="searchBar" autocomplete="on" placeholder="search for a meal" />
+  </div>
+<ul class="allMeals"></ul> `;
 
   const ul = document.querySelector(".allMeals");
   let mealTitle = document.getElementById("searchBar");
@@ -49,21 +44,41 @@ window.handleMealsRequest = () => {
       meal = await res.json();
       displayAllMeals(meal);
     } catch {
-      console.log(error);
+      console.log("error");
     }
   };
   function displayAllMeals(meals) {
     meals.map(meal => {
       const li = document.createElement("li");
-      let x = Math.floor(Math.random() * 6 + 1);
+      let x = Math.floor(Math.random() * 10 + 1);
       li.innerHTML = `
-    <img src="../assets/random${x}.jpg"  style="width:300px">
-    <h3>${meal.title}</h3>
-    <h3>${meal.price} dkk</h3>
-    <button class="w3-button w3-block w3-black w3-margin-bottom reserve-meal">
-    <a href="/meal/${meal.id}">Book meal</a></button>
-    `;
+     <img src="../assets/random${x}.jpg" class="mealImages" >
+      <div class="w3-container w3-margin-left w3-white">
+      <h3>${meal.title}</h3>
+      <h3>${meal.price} dkk</h3>
+        <button class="w3-button w3-block w3-black w3-margin-bottom w3-margin-left reserve-meal"  data-id='${meal.id}' >
+  Book meal</button>
+  </div>`;
       ul.appendChild(li);
+
+      const selector = `.reserve-meal[data-id='${meal.id}']`;
+      const but = document.querySelector(selector);
+      but.addEventListener("click", () => {
+        fetch(`/api/meals?availableReservations=true`)
+          .then(response => response.json())
+          .then(meals => {
+            console.log(meal);
+            const mealAvailable = meals.find(availableMeal => {
+              return availableMeal.id === meal.id;
+            });
+            console.log({ mealAvailable });
+            if (mealAvailable) {
+              window.location.href = `/meal/${meal.id}`;
+            } else {
+              alert("sorry ! , no available reservation for this meal ");
+            }
+          });
+      });
     });
   }
   loadMeals();

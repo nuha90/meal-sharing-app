@@ -15,29 +15,25 @@ window.handleMealRequest = params => {
         <a href="/reservations" class="w3-button w3-block w3-black">RESERVATION</a>
       </div>
       <div class="w3-col s3">
-        <a href="/reviews" class="w3-button w3-block w3-black">REVIEWS</a>
+        <a href="/contact" class="w3-button w3-block w3-black">CONTACT</a>
       </div>
     </div>
   </div>
-
-
-  
-  
-  <ul id="meals"></ul>
-  
+<ul id="meals"></ul>
+<ul id="s"></ul>   
   <div class="wrapper">
-  <div class="wrapper">
+ 
   
   <form id="myForm" class="form">
   <div class="input-feilds">
   
-  <input type="number" id="mealId" class="input" placeholder="Meal Id:" value=${params.id}><br></input>
+  <input type="number" id="mealId" class="input" placeholder="Meal Id:" value=${params.id}></input>
  
-  <input type="text" id="name1" class="input" placeholder="Name:" required ><br></input>
+  <input type="text" id="name1" class="input" placeholder="Name:" required ></input>
  
-  <input type="text" id="email" class="input" placeholder="Email:" required ><br></input>
+  <input type="text" id="email" class="input" placeholder="Email:" required ></input>
  
-  <input type="number" id="phone-number" class="input" placeholder="Phone Number:" required><br></input>
+  <input type="number" id="phone-number" class="input" placeholder="Phone Number:" required></input>
   <button type="submit" class="btn">Book Seat</button>
   </div>
   </form>
@@ -59,6 +55,7 @@ window.handleMealRequest = params => {
         ul.appendChild(li);
       });
     });
+
   const myForm = document.getElementById("myForm");
 
   myForm.addEventListener("submit", e => {
@@ -83,7 +80,7 @@ window.handleMealRequest = params => {
 
     fetch("/api/reservations/", options)
       .then(response => response.json())
-      .then(meal => {
+      .then(result => {
         alert(`you have reserved this meal`);
         console.log("Success:", result);
       })

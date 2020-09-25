@@ -15,54 +15,52 @@ window.handleHomeRequest = () => {
         <a href="/reservations" class="w3-button w3-block w3-black">RESERVATION</a>
       </div>
       <div class="w3-col s3">
-        <a href="/reviews" class="w3-button w3-block w3-black">REVIEWS</a>
+        <a href="/contact" class="w3-button w3-block w3-black">CONTACT</a>
       </div>
     </div>
   </div>
 
-
-
-  <!-- Header with image -->
+ <!-- Header with image -->
     <header class="bgimg w3-display-container " id="home">
     </header>
 
-    
-      <!-- About Container -->
+     <!-- About Container -->
       <div class="w3-container" id="about">
         <div class="w3-content" style="max-width: 700px">
           <h5 class="w3-center w3-padding-64">
-           
-          </h5>
-          
+         <strong>You don't have to cook fancy or complicated masterpieces - 
+         just good food from fresh ingredients.
+          </h5></strong>
           <div class="w3-panel w3-leftbar w3-light-grey">
             <p>
-            Made with love
+            The people who give you their food give you their heart.
+           - Cesar Chavez -
             </p>
-           
-          </div>
+           </div>
 
-          <img src="../assets/random1.jpg"  >
-          <img src="../assets/random2.jpg" >
-          <img src="../assets/random3.jpg"  >
-          <img src="../assets/random4.jpg"  >
-
-          
-
-      <!-- Menu Container -->
+       <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+      <div class="w3-quarter">
+        <img src="../assets/random1.jpg" style="width:100%; height50%">
+      </div>
+      <div class="w3-quarter">
+        <img src="../assets/random5.jpg"  style="width:100%">
+      </div>
+      <div class="w3-quarter">
+        <img src="../assets/random7.jpg"  style="width:100%">
+      </div>
+      <div class="w3-quarter">
+        <img src="../assets/random3.jpg"  style="width:100%">
+      </div>
+    </div>
+      
+   <!-- Menu Container -->
       <div class="w3-container" id="menu">
         <div class="w3-content" style="max-width: 700px">
           <h5 class="w3-center w3-padding-48">
-           
-          </h5>
-
-          
-         
-        </div>
+           </h5>
+</div>
       </div>
-
-      
-         
-          <p><strong>Add</strong> a new meal , and become our new host !</p>
+<p><strong>Add</strong> a new meal , and become our new host !</p>
           <form action="/action_page.php" target="_blank" id="myForm">
             <p>
               <input
@@ -115,19 +113,18 @@ window.handleHomeRequest = () => {
       </div>
 
       <!-- End page content -->
-    </div>
-
-    
-
-  
- 
- 
 <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
-© 2020 Copyright:
-    <a href="#"> nuhanajah90@gmail.com</a>
+<a href="https://www.facebook.com/nuha.najah/" target="_blank">
+<i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+<a href="https://www.linkedin.com/in/nouha-najah-90/" target="_blank">
+<i class="fa fa-linkedin w3-hover-opacity"></i></a>
+<a href="https://github.com/nuha90" target="_blank">
+<i class="fa fa-github w3-hover-opacity"></i></a>   <br>       
+
+<p>© 2020 Copyright :
+     Nouha Najah</p>
   </div>
-      
-    </footer>`;
+  </footer>`;
 
   const myForm = document.getElementById("myForm");
   myForm.addEventListener("submit", e => {
