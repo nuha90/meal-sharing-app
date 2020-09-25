@@ -61,9 +61,9 @@ window.handleMealsRequest = () => {
        <h3>${meal.title}</h3>
       <h3>${meal.price} dkk</h3>
       </div>
-        <button class="w3-button w3-block w3-black w3-margin-bottom w3-margin-left reserve-meal"  data-id='${meal.id}' >
+        <button class="w3-button  w3-black w3-margin-bottom w3-margin-left reserve-meal"  data-id='${meal.id}' >
   Book meal</button>
-  <button class="w3-button w3-block w3-blue w3-margin-bottom w3-margin-left "  ' >
+  <button class="w3-button  w3-blue w3-margin-bottom w3-margin-left "  ' >
   <a href="/review/${meal.id}">Rating</a></button>
  </div>
 `;

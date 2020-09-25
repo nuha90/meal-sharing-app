@@ -187,6 +187,13 @@ html {
     flex-direction: column;
     margin-left: 5px;
     width: 100%;
+    width: 20rem;
+  }
+  .reservations {
+    flex-direction: column;
+    margin-left: 5px;
+    width: 100%;
+    width: 20rem;
   }
   .mealImages {
     margin-left: 5px;
