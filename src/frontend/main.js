@@ -6,4 +6,5 @@ router.on(window.handleHomeRequest).resolve();
 router.on("/meals", window.handleMealsRequest).resolve();
 router.on("/meal/:id", window.handleMealRequest).resolve();
 router.on("/contact", window.handleContactRequest).resolve();
+router.on("/review/:id", window.handleReviewsRequest).resolve();
 router.on("/reservations", window.handleReservationsRequest).resolve();

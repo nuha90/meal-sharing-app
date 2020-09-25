@@ -20,7 +20,7 @@ window.handleMealRequest = params => {
     </div>
   </div>
 <ul id="meals"></ul>
-<ul id="s"></ul>   
+ 
   <div class="wrapper">
  
   

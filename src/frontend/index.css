@@ -77,6 +77,53 @@ html {
   cursor: pointer;
   text-transform: uppercase;
 }
+
+.review-wrapper {
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 0 20px;
+}
+.review-form {
+  max-width: 550px;
+  margin: 0 auto;
+  background: whitesmoke;
+  padding: 30px;
+  border-radius: 5px;
+  display: flex;
+  box-shadow: 0 0 10px;
+}
+.review-input-feilds {
+  display: flex;
+  flex-direction: column;
+  margin-right: 4%;
+  width: 48%;
+}
+.review-input-feilds .input {
+  color: black;
+  margin: 10px 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid black;
+  padding: 10px;
+  color: black;
+  width: 100%;
+}
+.btn-review {
+  background: #39b7dd;
+  text-align: center;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+::-webkit-input-placeholder {
+  color: #c5ecfd;
+}
+
 .allMeals {
   list-style-type: none;
   position: relative;
